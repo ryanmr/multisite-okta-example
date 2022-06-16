@@ -53,3 +53,7 @@ yarn dev
 ```
 
 I used my Okta Client IDs. For your own testing, feel free to make two Client IDs with PKCE flow.
+
+## Video
+
+If you don't want to try it, that's fine too. Here's a [video link](https://drive.google.com/file/d/1l8vIf-goQDE6EycM5y9hDsRGzAzShauP/view?usp=sharing).
