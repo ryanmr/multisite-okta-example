@@ -4,8 +4,8 @@ Suppose you have a webapp that's either an SPA or a composed MPA, and for strang
 
 Hypothetically, like this:
 
-* `/app1/` uses Client ID 🦋
-* `/app2/` uses Client ID 🦌
+* `/app1/` uses Client ID 🔵
+* `/app2/` uses Client ID 🟠
 
 A naive client side implementation of a token manager might assume that a domain might only ever have a single Client's worth of information.
 
@@ -19,7 +19,7 @@ tokenManager: {
 },
 ```
 
-In our example, we have two okta config files, `okta_app1.ts` and `okta_app2.ts` that represent our two Client IDs 🦋 and 🦌 and their related routes.
+In our example, we have two okta config files, `okta_app1.ts` and `okta_app2.ts` that represent our two Client IDs 🔵 and 🟠 and their related routes.
 
 With this setup, and because Okta is a single sign on provider, when you try to hit `/app1/dashboard`, you will be prompted initially for credentials. Then you'll get your redirect back to the app. If you swap over to `/app2/dashboard`, you will be briefly taken to the Okta domain, but the single sign on session remembers you, so it happens in a flash. Then you'll get your redirect back to the app again. With this setup, its almost seamless hopping between apps.
 
