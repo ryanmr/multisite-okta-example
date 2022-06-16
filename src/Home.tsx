@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { oktaAuth as oktaApp1 } from "./okta_app1";
 import { oktaAuth as oktaApp2 } from "./okta_app2";
@@ -6,38 +5,37 @@ import { oktaAuth as oktaApp2 } from "./okta_app2";
 export function Home() {
   return (
     <>
-      <h1>apps</h1>
+      <h1 className="text-2xl">App List</h1>
+      <p>Select the app you would like to go.</p>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "1rem",
-        }}
-      >
-        <Link to={"/app1/dashboard"} style={{ padding: "1rem" }}>
+      <div className="mb-4"></div>
+
+      <div className="grid grid-cols-2 grid-rows-2 gap-4">
+        <Link
+          to={"/app1/dashboard"}
+          className="bg-slate-300 hover:bg-blue-300 hover:border-blue-400 p-4 rounded text-center"
+        >
           Dashboard for App 1
         </Link>
 
-        <Link to={"/app2/dashboard"} style={{ padding: "1rem" }}>
-          Dashboard for App 2
-        </Link>
-      </div>
-
-      <hr />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "1rem",
-        }}
-      >
-        <button style={{ padding: "1rem" }} onClick={() => oktaApp1.signOut()}>
+        <button
+          onClick={() => oktaApp1.signOut()}
+          className="border-slate-300 p-4 border rounded hover:border-red-700"
+        >
           Sign out of App 1
         </button>
-        <button style={{ padding: "1rem" }} onClick={() => oktaApp2.signOut()}>
+
+        <Link
+          to={"/app2/dashboard"}
+          className="bg-slate-300 hover:bg-orange-300 hover:border-orange-400 p-4 rounded text-center"
+        >
+          Dashboard for App 2
+        </Link>
+
+        <button
+          onClick={() => oktaApp2.signOut()}
+          className="border-slate-300 p-4 border rounded hover:border-red-700"
+        >
           Sign out of App 2
         </button>
       </div>

@@ -9,7 +9,7 @@ import { SecurityWrapper } from "./SecurityWrapper";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto px-4">
       <BrowserRouter>
         <Routes>
           <Route path="/">

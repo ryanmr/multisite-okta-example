@@ -7,24 +7,32 @@ export function Dashboard({ app }: { app: string }) {
   const oktaAuth = app === "app1" ? oktaApp1 : oktaApp2;
   return (
     <>
-      <h1>Dashboard {app}</h1>
+      <h1 className="text-2xl text-center">Dashboard {app}</h1>
 
       {app === "app1" && (
-        <div>
-          <Link to="/app2/dashboard">🔃 jump to app2 dashboard</Link> |{" "}
-          <Link to="/">home</Link>
-        </div>
+        <ul className="flex space-x-4 [&>*]:bg-gray-200 [&>*]:p-2 [&>*]:rounded">
+          <li>
+            <Link to="/app2/dashboard">🟠 jump to app2 dashboard</Link>
+          </li>
+          <li>
+            <Link to="/">🏡 home</Link>
+          </li>
+        </ul>
       )}
 
       {app === "app2" && (
-        <div>
-          <Link to="/app1/dashboard">🔃 jump to app1 dashboard</Link> |{" "}
-          <Link to="/">home</Link>
-        </div>
+        <ul className="flex space-x-4 [&>*]:bg-gray-200 [&>*]:p-2 [&>*]:rounded">
+          <li>
+            <Link to="/app1/dashboard">🔵 jump to app1 dashboard</Link>
+          </li>
+          <li>
+            <Link to="/">🏡 home</Link>
+          </li>
+        </ul>
       )}
 
       <ErrorBoundary>
-        <h2>Your Access Token</h2>
+        <h2 className="text-xl font-bold">Your Access Token</h2>
         <code>
           <pre>
             {JSON.stringify(
@@ -36,7 +44,7 @@ export function Dashboard({ app }: { app: string }) {
           </pre>
         </code>
 
-        <h2>Your ID Token</h2>
+        <h2 className="text-xl font-bold">Your ID Token</h2>
         <code>
           <pre>
             {JSON.stringify(
