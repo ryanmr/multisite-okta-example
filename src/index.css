@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 a {
-    color: theme(colors.blue.500);
+    color: theme(colors.blue.700);
 }
 a:hover {
-    color: theme(colors.blue.600);
+    color: theme(colors.blue.800);
     text-decoration: underline;
 }
